@@ -5,10 +5,9 @@ import {generatePath, useNavigate} from 'react-router-dom'
 
 export const UserCard: FC<{ userData: User | null }> = ({ userData}) => {
   const navigate =useNavigate()
-  const detailsPath = generatePath('/detailed/:userId', { userId: userData?.login})
 
   const handleDetails = () => {
-    navigate(detailsPath)
+   navigate(generatePath('/detailed/:userId', { userId: userData?.login}))
   }
 
   return (

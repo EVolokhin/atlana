@@ -22,7 +22,6 @@ module.exports = {
         '@typescript-eslint'
     ],
     'rules': {
-        'quotes': ['error', 'single'],
         'react-hooks/exhaustive-deps': 0,
         '@typescript-eslint/explicit-function-return-type': 0,
         'react/prop-types': 0,

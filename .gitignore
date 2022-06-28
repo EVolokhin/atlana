@@ -28,3 +28,5 @@ yarn-error.log*
 /.eslintrc.js
 /.idea/misc.xml
 /.idea/inspectionProfiles/Project_Default.xml
+/src/.env
+/.env

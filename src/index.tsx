@@ -16,10 +16,11 @@ const authLink = setContext((_, { headers }) => {
   return{
     headers: {
       ...headers,
-      authorization: 'Bearer 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',
+      authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
       }
     }
 })
+
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
