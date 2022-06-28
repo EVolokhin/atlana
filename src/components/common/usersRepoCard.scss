@@ -1,0 +1,16 @@
+.repo-card {
+  display: flex;
+  align-self: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 60vw;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  background-color: rgba(56, 139, 253, 0.15);
+  font-size: 20px;
+  font-weight: bold;
+  &:hover {
+    cursor: pointer;
+  }
+}

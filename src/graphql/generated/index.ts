@@ -26327,7 +26327,7 @@ export type GetUserInfoQueryVariables = Exact<{
 }>;
 
 
-export type GetUserInfoQuery = { __typename?: 'Query', user?: { __typename?: 'User', login: string, avatarUrl: any, name?: string | null, createdAt: any, location?: string | null, followers: { __typename?: 'FollowerConnection', totalCount: number }, following: { __typename?: 'FollowingConnection', totalCount: number }, repositories: { __typename?: 'RepositoryConnection', totalCount: number, nodes?: Array<{ __typename?: 'Repository', name: string, stargazerCount: number, forkCount: number } | null> | null } } | null };
+export type GetUserInfoQuery = { __typename?: 'Query', user?: { __typename?: 'User', login: string, avatarUrl: any, name?: string | null, createdAt: any, location?: string | null, followers: { __typename?: 'FollowerConnection', totalCount: number }, following: { __typename?: 'FollowingConnection', totalCount: number }, repositories: { __typename?: 'RepositoryConnection', totalCount: number, nodes?: Array<{ __typename?: 'Repository', name: string, stargazerCount: number, forkCount: number, url: any } | null> | null } } | null };
 
 export type ListUsersQueryVariables = Exact<{
   query: Scalars['String'];
@@ -26356,6 +26356,7 @@ export const GetUserInfoDocument = gql`
         name
         stargazerCount
         forkCount
+        url
       }
       totalCount
     }

@@ -16,6 +16,7 @@ query getUserInfo($login: String!) {
         name
         stargazerCount
         forkCount
+        url
       }
       totalCount
     }
