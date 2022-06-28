@@ -1,0 +1,18 @@
+overwrite: true
+schema: 'src/graphql/schema/schema.graphql'
+documents: 'src/graphql/definitions/**/*.graphql'
+# pluckConfig:
+#   globalGqlIdentifierName:
+#     - gql
+generates:
+  src/graphql/generated/index.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      scalars:
+        ID: string | number
+  # src/graphql/schema.json:
+  #   plugins:
+  #     - "introspection"

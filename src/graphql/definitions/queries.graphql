@@ -1,0 +1,39 @@
+query getUserInfo($login: String!) {
+  user(login: $login) {
+    login
+    avatarUrl
+    name
+    createdAt
+    location
+    followers (first: 30){
+      totalCount
+    }
+    following(first: 30){
+      totalCount
+    }
+    repositories(first: 100){
+      nodes {
+        name
+        stargazerCount
+        forkCount
+      }
+      totalCount
+    }
+  }
+}
+
+query listUsers($query: String!) {
+  search(first: 100, type: USER, query: $query) {
+    nodes {
+      ... on User {
+        id
+        login
+        avatarUrl
+        name
+        repositories(first: 30){
+          totalCount
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,21 @@
 import React,{ FC } from 'react'
+import {User} from '../../graphql/generated'
+import './userCard.scss'
+import {generatePath, useNavigate} from 'react-router-dom'
 
-export const UsersCard: FC = () => {
+export const UserCard: FC<{ userData: User | null }> = ({ userData}) => {
+  const navigate =useNavigate()
+  const detailsPath = generatePath('/detailed/:userId', { userId: userData?.login})
+
+  const handleDetails = () => {
+    navigate(detailsPath)
+  }
+
   return (
-    <div>
-      <img alt={'users photo'}>Image</img>
-      <div>Name</div>
-      <div>Repo</div>
+    <div className={'card-container'} onClick={handleDetails}>
+      <img className={'card-image'} src={`${userData?.avatarUrl}`} alt={'users photo'}/>
+      <div>{userData?.name}</div>
+      <div>Repo: {userData?.repositories?.totalCount}</div>
     </div>
   )
 }
